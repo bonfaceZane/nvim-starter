@@ -3,8 +3,11 @@ return {
 
         "williamboman/mason.nvim",
         lazy = false,
+
         config = function()
-            require("mason").setup()
+            require("mason").setup({
+              ensure_installed = {'typescript-language-server'}
+            })
         end,
     },
 
@@ -15,7 +18,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "tsserver","rust_analyzer","biome", "marksman", "taplo" },
+                ensure_installed = { "lua_ls", "tsserver","rust_analyzer", "marksman", "taplo" },
             })
         end,
     },
